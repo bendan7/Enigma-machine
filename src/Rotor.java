@@ -1,15 +1,17 @@
 public class Rotor extends Translator {
 
+    private  int rotorNum;
     private int notch;
     private int place;
     private int offset;
+    private int in_offset;
     private String permutation ;
     Machine machine;
 
 
     //config the rotor num, offset and it place int the machine
     // rotorNum: 1-5 , offset: 0-25
-    public Rotor(int place, int RotorNum, int offset ,Machine m) {
+    public Rotor(int place, int RotorNum, int offset, int in_offset ,Machine m) {
         switch (RotorNum){
             case 1:
                 permutation = new String("EKMFLGDQVZNTOWYHXUSPAIBRCJ");
@@ -32,9 +34,14 @@ public class Rotor extends Translator {
                 notch = 0;
                 break;
         }
+        this.rotorNum=RotorNum;
         this.offset=offset;
         this.place=place;
+        this.in_offset=in_offset;
         this.machine=m;
+        this.ringSetting(in_offset);
+
+
     }
 
 
@@ -63,8 +70,8 @@ public class Rotor extends Translator {
 
         int tmp = Math.floorMod(x+offset, 26);
 
-        System.out.println("offset: "+offset);
-        System.out.println("lett: "+ tmp);
+
+        System.out.println("lett: "+ indexToLett(Math.floorMod((lettToIndex(permutation.charAt(tmp))-offset), 26)));
         return Math.floorMod((lettToIndex(permutation.charAt(tmp))-offset), 26);
 
     }
@@ -87,5 +94,31 @@ public class Rotor extends Translator {
 
     protected boolean isDoubleStepping(){
         return  notch-1 == offset;
+    }
+
+    private void ringSetting(int numOfShifts){
+
+        String str =this.permutation;
+
+        String newstr =new String(str.substring(str.length()-numOfShifts,str.length()));
+        String tmp1 =new String(str.substring(0,str.length()-numOfShifts));
+        newstr= newstr.concat(tmp1);
+        System.out.println("ROTOR "+ rotorNum+": " +newstr);
+
+
+        char[] arr = newstr.toCharArray();
+
+        for (int i =0 ; i<newstr.length() ; i++){
+            arr[i]= indexToLett(lettToIndex(arr[i])+numOfShifts);
+        }
+
+        newstr = new String(arr);
+        System.out.println("ROTOR "+ rotorNum+": " +newstr);
+
+
+        //update the permutation
+        this.permutation =newstr;
+
+
     }
 }

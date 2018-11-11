@@ -22,13 +22,18 @@ public class Main {
 //        pb.addPair('Z','I');
 //        pb.print();
         }
+
+
+
+
+
         Machine m = new Machine();
         PlugBoard pb = new PlugBoard();
         Reflector ref =new Reflector();
-        Rotor c = new Rotor(3,1,16,m);
-        Rotor b = new Rotor(2,2,4,m);
-        Rotor a = new Rotor(1,3,21,m);
-        m.MachineInsertElement(pb,a,b,c,ref);
+        Rotor RIGHT = new Rotor(1,4,8,5,m);
+        Rotor MID = new Rotor(2,2,3,7,m);
+        Rotor LEFT = new Rotor(3,1,18,2,m);
+        m.MachineInsertElement(pb,RIGHT,MID,LEFT,ref);
 
 
         while (true){

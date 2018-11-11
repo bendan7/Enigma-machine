@@ -45,9 +45,9 @@ public class Machine extends Translator {
         //forward direction
         //todo: test without the plug board in the forward and revers
         for(int i=1 ; i<5 ; i++){
-            System.out.println("tmp is: "+tmp);
+            //System.out.println("tmp is: "+tmp);
             tmp = elements[i].permutationF(tmp);
-            System.out.println("after the "+i+"element: "+tmp);
+            //System.out.println("after the "+i+"element: "+tmp);
         }
 
 

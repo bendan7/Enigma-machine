@@ -7,6 +7,8 @@ public abstract class Translator {
         return i;
     }
     protected char indexToLett(int i){
+        //if the index too is bigger the Z
+        i= Math.floorMod(i, 26);
         int c =i+65;
 
         return (char)c;
