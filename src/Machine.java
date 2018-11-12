@@ -33,9 +33,6 @@ public class Machine extends Translator {
             r=((Rotor)elements[rotorNum+1]);
             r.incOffset();
         }
-
-
-
     }
 
     public char cipher(char c){
@@ -43,17 +40,12 @@ public class Machine extends Translator {
         int tmp = lettToIndex(c);
 
         //forward direction
-        //todo: test without the plug board in the forward and revers
-        for(int i=1 ; i<5 ; i++){
-            //System.out.println("tmp is: "+tmp);
+        for(int i=0 ; i<5 ; i++){
             tmp = elements[i].permutationF(tmp);
-            //System.out.println("after the "+i+"element: "+tmp);
         }
 
-
-
         //revers direction: without the reflector
-        for (int i=3 ; i>0 ; i--){
+        for (int i=3 ; i>-1 ; i--){
             tmp = elements[i].permutationR(tmp);
         }
 
