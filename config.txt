@@ -4,35 +4,35 @@
 # 1)AB
 
 plugboard:
-0)ZU
-1)HL
-2)CQ
-3)WM
-4)OA
-5)PY
-6)EB
-7)TR
-8)DN
-9)VI
+0)AT
+1)CE
+2)RL
+3)
+4)
+5)
+6)
+7)
+8)
+9)
 
-# 1=LEFT 2=MIDDLE 3=RIGHT 
+# 1=LEFT 2=MIDDLE 3=RIGHT | VALUES 1-5
 # example:
 # 1)AB
 ROTORS:
-1)2
-2)5
+1)1
+2)2
 3)4
 
 # values A-Z
 ROTORS SETTING:
-1)S
-2)I
-3)X
+1)C
+2)H
+3)F
 
 # values A-Z
 ROTORS OFFSET:
-1)C
-2)O
-3)N
+1)S
+2)D
+3)I
 
 #END CONFIG FILE

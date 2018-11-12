@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 
         File config_file = new File("config.txt");
         File input_file = new File("input.txt");
@@ -91,12 +91,17 @@ public class Main {
         Reflector ref =new Reflector();
         m.MachineInsertElement(pb,RIGHT,MID,LEFT,ref);
 
+
+        PrintWriter writer = new PrintWriter("output.txt", "UTF-8");
+
+
+
         // cipher LOOP
         for(int j=0; j<input.length() ; j++){
-            System.out.println(m.cipher(input.charAt(j)));
-
-            
+            writer.print(m.cipher(input.charAt(j)));
         }
+
+        writer.close();
 //        while (true){
 //            System.out.println("enter num:");
 //            Scanner in = new Scanner(System.in);

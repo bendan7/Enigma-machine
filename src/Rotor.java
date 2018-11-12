@@ -57,21 +57,8 @@ public class Rotor extends Translator {
         }
 
 
-//        //if the notch is pass
-//        if(offset==notch) {
-//            if (this.place == 3) {
-//            }  //if it the leftmost rotor do nothing
-//            else {
-//                machine.incOffSet(place + 1);
-//            }
-//        }
-
-
-
         int tmp = Math.floorMod(x+offset, 26);
 
-
-        System.out.println("lett: "+ indexToLett(Math.floorMod((lettToIndex(permutation.charAt(tmp))-offset), 26)));
         return Math.floorMod((lettToIndex(permutation.charAt(tmp))-offset), 26);
 
     }
