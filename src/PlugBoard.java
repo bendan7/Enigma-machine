@@ -21,14 +21,14 @@ public class PlugBoard extends Translator {
             return false;
         }
         if(plugs[lettToIndex(a)]!=-1 || plugs[lettToIndex(b)]!=-1){
-            System.out.println("Already chosen");
+            System.out.println("Already used letters");
             return false;
         }
 
         plugs[lettToIndex(a)]=counter;
         plugs[lettToIndex(b)]=counter;
         counter++;
-
+        System.out.println("New Pair:"+a+"-"+b);
         return true;
     }
 

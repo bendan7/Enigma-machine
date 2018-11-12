@@ -1,0 +1,38 @@
+# all letters should be capital letters
+#
+# example:
+# 1)AB
+
+plugboard:
+0)ZU
+1)HL
+2)CQ
+3)WM
+4)OA
+5)PY
+6)EB
+7)TR
+8)DN
+9)VI
+
+# 1=LEFT 2=MIDDLE 3=RIGHT 
+# example:
+# 1)AB
+ROTORS:
+1)2
+2)5
+3)4
+
+# values A-Z
+ROTORS SETTING:
+1)S
+2)I
+3)X
+
+# values A-Z
+ROTORS OFFSET:
+1)C
+2)O
+3)N
+
+#END CONFIG FILE

@@ -103,8 +103,6 @@ public class Rotor extends Translator {
         String newstr =new String(str.substring(str.length()-numOfShifts,str.length()));
         String tmp1 =new String(str.substring(0,str.length()-numOfShifts));
         newstr= newstr.concat(tmp1);
-        System.out.println("ROTOR "+ rotorNum+": " +newstr);
-
 
         char[] arr = newstr.toCharArray();
 
@@ -113,12 +111,8 @@ public class Rotor extends Translator {
         }
 
         newstr = new String(arr);
-        System.out.println("ROTOR "+ rotorNum+": " +newstr);
-
 
         //update the permutation
         this.permutation =newstr;
-
-
     }
 }
